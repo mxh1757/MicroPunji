@@ -1,0 +1,1 @@
+console.log('Micropunji site loaded.');

@@ -1,2 +1,1 @@
-# MicroPunji
-This is for an investment company.
+# Micropunji Static Site\n\nReady for GitHub Pages deployment.
