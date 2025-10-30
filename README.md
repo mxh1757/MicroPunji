@@ -1,1 +1,1 @@
-# Micropunji Static Site\n\nReady for GitHub Pages deployment.
+# MicroPunji Static Website\n\nLight modern version with login modal and contact form. Ready for GitHub Pages deployment.
