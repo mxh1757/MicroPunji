@@ -3,109 +3,328 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MicroPunji — Smarter Private Fund Management</title>
-  <meta name="description" content="MicroPunji manages private investment funds across equities, crypto, metals and indices with transparent strategies and investor-focused growth." />
+  <title>MicroPunji — Private Investment Management</title>
+  <meta name="description" content="MicroPunji is a private investment management firm allocating client capital across equities, digital assets, metals, and global indices, with three mandate tiers built on transparency and risk discipline." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="navbar">
     <div class="container nav-inner">
-      <h1 class="logo">MicroPunji</h1>
-      <nav class="nav-links">
+      <a href="#top" class="logo">MicroPunji</a>
+
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryNav">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav id="primaryNav" class="nav-links">
         <a href="#about">About</a>
-        <a href="#tiers">Investment Tiers</a>
-        <a href="#features">Features</a>
+        <a href="#approach">Approach</a>
+        <a href="#tiers">Tiers</a>
         <a href="#contact">Contact</a>
-        <button id="loginBtn" class="btn primary">Login / Signup</button>
+        <button id="loginBtn" class="btn btn-outline">Client login</button>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
+  <main id="main">
+    <section id="top" class="hero">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <h2>Smarter, diversified private fund management</h2>
-          <p>MicroPunji empowers investors through actively managed portfolios across global markets — equities, crypto, metals, indices, and more.</p>
+          <h1>Capital, managed with discipline.</h1>
+          <p>MicroPunji is a private investment management firm. We build and run diversified mandates across equities, digital assets, metals, and global indices, structured around one principle: clients should always understand exactly what they own and why.</p>
           <div class="hero-actions">
-            <a href="#tiers" class="btn primary">View Investment Tiers</a>
-            <a href="#contact" class="btn secondary">Get in Touch</a>
+            <a href="#tiers" class="btn btn-primary">View investment tiers</a>
+            <a href="#contact" class="btn btn-ghost">Talk to an advisor</a>
           </div>
+          <dl class="hero-meta">
+            <div class="hero-meta-item">
+              <dt>Asset classes covered</dt>
+              <dd>4</dd>
+            </div>
+            <div class="hero-meta-item">
+              <dt>Mandate tiers</dt>
+              <dd>3</dd>
+            </div>
+            <div class="hero-meta-item">
+              <dt>Market coverage</dt>
+              <dd>Global</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-visual">
+          <svg class="hero-chart" viewBox="0 0 640 380" role="img" aria-labelledby="heroChartTitle" preserveAspectRatio="xMidYMid meet">
+            <title id="heroChartTitle">Illustrative allocation line rising across four asset classes</title>
+            <line x1="0" y1="80" x2="640" y2="80" class="chart-grid" />
+            <line x1="0" y1="180" x2="640" y2="180" class="chart-grid" />
+            <line x1="0" y1="280" x2="640" y2="280" class="chart-grid" />
+            <path class="chart-line" d="M0,300 C50,290 80,320 130,270 C170,230 200,260 250,210 C290,170 320,195 370,150 C410,115 445,135 490,90 C525,60 560,80 640,20" />
+            <g class="chart-markers">
+              <circle cx="130" cy="270" r="5" />
+              <circle cx="250" cy="210" r="5" />
+              <circle cx="370" cy="150" r="5" />
+              <circle cx="490" cy="90" r="5" />
+            </g>
+            <g class="chart-labels">
+              <text x="130" y="298">Equities</text>
+              <text x="250" y="233" text-anchor="middle">Digital assets</text>
+              <text x="370" y="128" text-anchor="middle">Metals</text>
+              <text x="490" y="68" text-anchor="end">Indices</text>
+            </g>
+          </svg>
         </div>
       </div>
     </section>
 
     <section id="about" class="section">
-      <div class="container">
-        <h3>About MicroPunji</h3>
-        <p>MicroPunji is a private investment management company that helps investors diversify their portfolios across multiple asset classes. We combine data-driven insights with disciplined risk management to deliver consistent long-term performance.</p>
+      <div class="container about-grid">
+        <div class="about-copy">
+          <h2>Built around four principles</h2>
+          <p>Most of what determines an outcome is decided before a single dollar is deployed: how a mandate is structured, how positions are sized, and how often a client actually sees what's happening inside their own portfolio. MicroPunji is organized around getting that structure right first.</p>
+        </div>
+        <ul class="principles">
+          <li>
+            <h3>Diversification</h3>
+            <p>Capital is spread across equities, digital assets, metals, and indices, not concentrated in a single narrative.</p>
+          </li>
+          <li>
+            <h3>Discipline</h3>
+            <p>Allocation rules and rebalancing triggers are agreed in advance, not improvised in reaction to headlines.</p>
+          </li>
+          <li>
+            <h3>Transparency</h3>
+            <p>Every mandate comes with a defined reporting cadence, so clients always know their current positions.</p>
+          </li>
+          <li>
+            <h3>Access</h3>
+            <p>Higher tiers unlock broader asset access and more direct advisor contact, not different levels of honesty.</p>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <section id="tiers" class="section light">
+    <section id="approach" class="section section-line">
       <div class="container">
-        <h3>Investment Tiers</h3>
-        <div class="tiers-grid">
-          <div class="tier-card">
-            <h4>Starter</h4>
-            <p>Minimum Investment: $1,000</p>
-            <p>Focus: ETFs, Index Funds</p>
+        <h2>How a mandate comes together</h2>
+        <ol class="process">
+          <li>
+            <span class="process-index">01</span>
+            <div>
+              <h3>Consultation</h3>
+              <p>We discuss your goals, time horizon, and risk tolerance before recommending a tier or a strategy.</p>
+            </div>
+          </li>
+          <li>
+            <span class="process-index">02</span>
+            <div>
+              <h3>Allocation</h3>
+              <p>We design a mandate across the asset classes appropriate to your tier and risk profile.</p>
+            </div>
+          </li>
+          <li>
+            <span class="process-index">03</span>
+            <div>
+              <h3>Execution</h3>
+              <p>Capital is deployed according to the agreed strategy, with position sizing set in advance.</p>
+            </div>
+          </li>
+          <li>
+            <span class="process-index">04</span>
+            <div>
+              <h3>Reporting</h3>
+              <p>You receive statements on your tier's reporting cadence, plus scheduled portfolio reviews.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="tiers" class="section section-dark">
+      <div class="container">
+        <h2>Investment tiers</h2>
+        <p class="section-lede">Three mandate levels, differentiated by minimum commitment, asset access, and how often you hear from us.</p>
+
+        <div class="ledger-wrap">
+          <table class="ledger">
+            <caption class="sr-only">Comparison of MicroPunji investment tiers</caption>
+            <thead>
+              <tr>
+                <th scope="col" class="ledger-row-label"><span class="sr-only">Tier</span></th>
+                <th scope="col">
+                  <span class="tier-name">Foundation</span>
+                  <span class="tier-price">$50,000</span>
+                </th>
+                <th scope="col">
+                  <span class="tier-name">Momentum</span>
+                  <span class="tier-price">$100,000</span>
+                </th>
+                <th scope="col">
+                  <span class="tier-name">Apex</span>
+                  <span class="tier-price">$500,000</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="ledger-row-label">Mandate type</th>
+                <td data-label="Foundation">Core allocation</td>
+                <td data-label="Momentum">Active allocation</td>
+                <td data-label="Apex">Full discretionary mandate</td>
+              </tr>
+              <tr>
+                <th scope="row" class="ledger-row-label">Asset access</th>
+                <td data-label="Foundation">Indices &amp; ETFs, blue-chip equities</td>
+                <td data-label="Momentum">Equities, metals, select digital assets</td>
+                <td data-label="Apex">Global equities, digital assets, metals, private deals</td>
+              </tr>
+              <tr>
+                <th scope="row" class="ledger-row-label">Reporting cadence</th>
+                <td data-label="Foundation">Quarterly</td>
+                <td data-label="Momentum">Monthly</td>
+                <td data-label="Apex">Monthly, with on-request statements</td>
+              </tr>
+              <tr>
+                <th scope="row" class="ledger-row-label">Advisor access</th>
+                <td data-label="Foundation">Shared advisory team</td>
+                <td data-label="Momentum">Named portfolio contact</td>
+                <td data-label="Apex">Dedicated advisor</td>
+              </tr>
+              <tr>
+                <th scope="row" class="ledger-row-label">Rebalancing</th>
+                <td data-label="Foundation">Semi-annual</td>
+                <td data-label="Momentum">Quarterly</td>
+                <td data-label="Apex">Continuous, within agreed bands</td>
+              </tr>
+              <tr class="ledger-cta-row">
+                <th scope="row" class="ledger-row-label"><span class="sr-only">Get started</span></th>
+                <td data-label="Foundation"><a class="btn btn-outline btn-block" href="#contact">Start with Foundation</a></td>
+                <td data-label="Momentum"><a class="btn btn-primary btn-block" href="#contact">Start with Momentum</a></td>
+                <td data-label="Apex"><a class="btn btn-outline btn-block" href="#contact">Start with Apex</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="markets" class="section section-line">
+      <div class="container">
+        <h2>Asset classes we allocate across</h2>
+        <div class="markets-row">
+          <div class="market-item">
+            <h3>Equities</h3>
+            <p>Public companies across developed and select emerging markets.</p>
           </div>
-          <div class="tier-card">
-            <h4>Growth</h4>
-            <p>Minimum Investment: $10,000</p>
-            <p>Focus: Stocks, Commodities, Metals</p>
+          <div class="market-item">
+            <h3>Digital assets</h3>
+            <p>A measured allocation to established, liquid cryptocurrencies.</p>
           </div>
-          <div class="tier-card">
-            <h4>Elite</h4>
-            <p>Minimum Investment: $100,000</p>
-            <p>Focus: Global Equities, Crypto, Private Deals</p>
+          <div class="market-item">
+            <h3>Metals</h3>
+            <p>Gold and other metals held as a stabilizing counterweight.</p>
+          </div>
+          <div class="market-item">
+            <h3>Global indices</h3>
+            <p>Broad index exposure for efficient, low-friction diversification.</p>
+          </div>
+          <div class="market-item">
+            <h3>Private deals</h3>
+            <p>Apex-tier access to select alternative opportunities.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="features" class="section">
-      <div class="container">
-        <h3>Platform Features</h3>
-        <ul>
-          <li>Secure investor dashboard</li>
-          <li>Real-time performance tracking</li>
-          <li>Fund diversification across multiple markets</li>
-          <li>Wire transfer and multiple deposit options</li>
-        </ul>
-      </div>
-    </section>
+    <section id="contact" class="section">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <h2>Talk to an advisor</h2>
+          <p>Tell us about your goals and which tier you're considering. We'll follow up to schedule a consultation.</p>
+          <dl class="contact-details">
+            <div>
+              <dt>Email</dt>
+              <dd><a href="mailto:advisors@micropunji.com">advisors@micropunji.com</a></dd>
+            </div>
+            <div>
+              <dt>Response time</dt>
+              <dd>Within two business days</dd>
+            </div>
+          </dl>
+          <p class="fine-print">MicroPunji provides private investment management services and does not offer this website's content as personalized financial, legal, or tax advice. All investments carry risk, including possible loss of principal, and past performance does not indicate future results.</p>
+        </div>
 
-    <section id="contact" class="section light">
-      <div class="container">
-        <h3>Contact Us</h3>
-        <p>Have questions about our investment products or partnerships?</p>
-        <form id="contactForm">
-          <input type="text" placeholder="Full Name" required>
-          <input type="email" placeholder="Email" required>
-          <textarea placeholder="Message" rows="4" required></textarea>
-          <button type="submit" class="btn primary">Send Message</button>
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="field">
+            <label for="fullName">Full name</label>
+            <input type="text" id="fullName" name="fullName" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="tierInterest">Tier of interest</label>
+            <select id="tierInterest" name="tierInterest">
+              <option value="foundation">Foundation — $50,000</option>
+              <option value="momentum">Momentum — $100,000</option>
+              <option value="apex">Apex — $500,000</option>
+              <option value="unsure">Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send message</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
   </main>
 
   <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-logo">MicroPunji</p>
+        <p class="fine-print">MicroPunji provides private investment management services to qualified investors. This website is for informational purposes only and is not an offer or solicitation to invest. All investments involve risk, including possible loss of principal. Past performance is not indicative of future results.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="#about">About</a>
+        <a href="#approach">Approach</a>
+        <a href="#tiers">Tiers</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
     <div class="container">
-      <p>© 2025 MicroPunji. All rights reserved.</p>
+      <p class="fine-print">&copy; <span id="year"></span> MicroPunji. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Login Modal -->
-  <div id="loginModal" class="modal hidden">
+  <div id="loginModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="loginModalTitle">
+    <div class="modal-backdrop" data-close-modal></div>
     <div class="modal-content">
-      <span id="closeModal" class="close">&times;</span>
-      <h3>Login / Signup</h3>
+      <button id="closeModal" class="modal-close" aria-label="Close dialog">&times;</button>
+      <h2 id="loginModalTitle">Client login</h2>
+      <p class="modal-note">Demo access only — no real account is created and no data is sent anywhere.</p>
       <form id="loginForm">
-        <input type="text" id="username" placeholder="Username" required>
-        <input type="password" id="password" placeholder="Password" required>
-        <button type="submit" class="btn primary">Login</button>
+        <div class="field">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required autocomplete="username">
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Log in</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
   </div>
