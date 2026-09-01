@@ -1,0 +1,259 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * MicroPunji design system — private-banking palette:
+ * ink navy surfaces, cool paper, brass accent.
+ * All colors in oklch. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 3px);
+  --radius-xl: calc(var(--radius) + 9px);
+
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-brass: var(--brass);
+  --color-brass-soft: var(--brass-soft);
+  --color-ink-soft: var(--text-ink-soft);
+  --color-on-ink: var(--text-paper);
+  --color-on-ink-soft: var(--text-paper-soft);
+  --color-line-ink: var(--line-on-ink);
+  --color-line-paper: var(--line-on-paper);
+}
+
+:root {
+  --radius: 3px;
+
+  --ink: oklch(0.221 0.0394 258.28);
+  --ink-2: oklch(0.2736 0.0492 255.17);
+  --ink-3: oklch(0.3186 0.0588 256.71);
+  --paper: oklch(0.9593 0.0025 165.07);
+  --paper-2: oklch(0.9281 0.0042 157.17);
+  --text-ink: oklch(0.205 0.02 248.83);
+  --text-ink-soft: oklch(0.4262 0.0244 250.67);
+  --text-paper: oklch(0.9498 0.0045 134.85);
+  --text-paper-soft: oklch(0.7785 0.0204 252.91);
+  --brass: oklch(0.6294 0.0985 80.2);
+  --brass-soft: oklch(0.7367 0.0891 80.57);
+  --line-on-paper: oklch(0.221 0.0394 258.28 / 14%);
+  --line-on-ink: oklch(0.9498 0.0045 134.85 / 16%);
+
+  --background: var(--paper);
+  --foreground: var(--text-ink);
+  --card: oklch(0.99 0.002 165);
+  --card-foreground: var(--text-ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--text-ink);
+  --primary: var(--brass);
+  --primary-foreground: var(--ink);
+  --secondary: var(--paper-2);
+  --secondary-foreground: var(--ink);
+  --muted: var(--paper-2);
+  --muted-foreground: var(--text-ink-soft);
+  --accent: var(--brass-soft);
+  --accent-foreground: var(--ink);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: var(--line-on-paper);
+  --input: var(--line-on-paper);
+  --ring: var(--brass);
+
+  --gradient-ink: linear-gradient(
+    155deg,
+    var(--ink) 0%,
+    var(--ink-2) 55%,
+    var(--ink-3) 100%
+  );
+  --gradient-brass: linear-gradient(100deg, var(--brass) 0%, var(--brass-soft) 100%);
+  --shadow-lift: 0 24px 60px -30px oklch(0.221 0.0394 258.28 / 45%);
+  --shadow-brass: 0 18px 44px -22px oklch(0.6294 0.0985 80.2 / 55%);
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Surfaces */
+@utility surface-ink {
+  background-image: var(--gradient-ink);
+  color: var(--color-on-ink);
+}
+
+@utility surface-grid {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, var(--line-on-ink) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--line-on-ink) 1px, transparent 1px);
+    background-size: 84px 84px;
+    mask-image: radial-gradient(ellipse at 70% 20%, black, transparent 72%);
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+@utility eyebrow-on-ink {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brass-soft);
+}
+
+@utility figure-mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+@utility link-underline {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 1px;
+    width: 100%;
+    background: var(--brass);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s var(--ease-out-soft);
+  }
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+@utility hover-lift {
+  transition:
+    transform 0.4s var(--ease-out-soft),
+    box-shadow 0.4s var(--ease-out-soft),
+    border-color 0.3s ease;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift);
+  }
+}
+
+@utility shimmer-text {
+  background: linear-gradient(
+    100deg,
+    var(--brass) 0%,
+    var(--brass-soft) 40%,
+    var(--brass) 70%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -220% 0;
+  }
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-draw {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+  animation: draw-line 2.4s var(--ease-out-soft) 0.3s forwards;
+}
+
+@utility animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
